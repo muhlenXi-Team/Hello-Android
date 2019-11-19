@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 public class FirstActivity extends AppCompatActivity {
 
+    private static final String TAG = "FirstActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,7 +23,7 @@ public class FirstActivity extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intentSecondActivity();
+                showToast();
             }
         });
     }
@@ -38,6 +39,10 @@ public class FirstActivity extends AppCompatActivity {
                 break;
                 default:
         }
+    }
+
+    void showToast() {
+        Toast.makeText(this, "hello, world!", Toast.LENGTH_SHORT).show();
     }
 
     void intentSecondActivity() {
